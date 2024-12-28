@@ -1,0 +1,8 @@
+virsh attach-disk --domain rhel9-test1 --source /var/lib/libvirt/images/rhel9-test-disk4.qcow2 --target vdd --persistent
+virsh edit --domain rhel9-test1
+
+virt-manager -c qemu:///system --show-domain-console rhel9-test1
+
+virsh dumpxml rhel9-test1
+qemu-img info /var/lib/libvirt/images/rhel9-test-disk4.qcow2
+qemu-img create -f qcow2 /var/lib/libvirt/images/rhel9-test-disk4.qcow2 5G
