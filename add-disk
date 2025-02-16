@@ -1,0 +1,2 @@
+sudo qemu-img create -f qcow2 /var/lib/libvirt/images/node4-1.qcow2 3G
+virsh attach-disk --domain node4 --source /var/lib/libvirt/images/node4-1.qcow2 --target vdb --persistent --subdriver qcow2
